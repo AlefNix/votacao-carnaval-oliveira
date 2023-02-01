@@ -55,7 +55,6 @@ function login() {
                     usuario.votouRainha = false;
                 }
             })()
-            location.reload();
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

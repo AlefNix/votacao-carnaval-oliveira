@@ -35,8 +35,14 @@ function login() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            
+            console.log(user);
 
+            setDoc(doc(db, "users", user.displayName), {
+                nome: user.displayName,
+                email: user.email,
+                votouBloco: false,
+                votouRainha: false
+            })
             (async function () {
                 const docRef = doc(db, "users", user.displayName);
                 const docSnap = await getDoc(docRef);
@@ -56,13 +62,13 @@ function login() {
                     usuario.votouRainha = false;
                 }
             })()
-            location.reload();
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             const credential = GoogleAuthProvider.credentialFromError(error);
-
-            console.log(errorMessage)
+            console.log(errorMessage);
+            console.log(credential);
+            console.log(errorCode)
         });
 }
 
@@ -86,6 +92,16 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('login').style.display = "inline-block";
     }
 });
+
+
+function votouRainha() {
+    onAuthStateChanged(auth, async (user) => {
+        await updateDoc(doc(db, "users", user.displayName), {
+            votouRainha: true
+        });
+    });
+    usuario.votouRainha = true;
+}
 
 function thauane() {
     (async function () {
