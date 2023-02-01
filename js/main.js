@@ -17,8 +17,8 @@ let provider = new GoogleAuthProvider(app);
 const db = getFirestore(app);
 
 let usuario = {
-    votouBloco: false,
-    votouRainha: false
+    votouBloco: Boolean,
+    votouRainha: Boolean
 }
 
 let mensagemBloco = "Você ja votou em um bloco!";
@@ -56,7 +56,7 @@ function login() {
                     usuario.votouRainha = false;
                 }
             })()
-
+            location.reload();
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -71,11 +71,22 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('imagem-perfil').src = user.providerData[0].photoURL;
         document.getElementById('login').style.display = "none";
         document.getElementById('imagem-perfil').style.display = "inline-block";
+        (async function () {
+            const docRef = doc(db, "users", user.displayName);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                usuario.votouBloco = docSnap.data().votouBloco;
+                usuario.votouRainha = docSnap.data().votouRainha;
+                console.log("Document data:", docSnap.data());
+            }
+        })()
     } else {
         document.getElementById('imagem-perfil').style.display = "none";
         document.getElementById('login').style.display = "inline-block";
     }
 });
+
 
 function votouBloco() {
     onAuthStateChanged(auth, async (user) => {
@@ -117,11 +128,6 @@ function peloAmorDeDeus() {
 document.getElementById('pelo-amor-de-deus').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const uid = user.uid;
-            console.log(uid)
-            console.log(user.email);
-            console.log(user);
-            console.log(usuario.votouBloco);
             if(usuario.votouBloco == false) {
                 peloAmorDeDeus();
             } else {
@@ -155,11 +161,6 @@ function goloMotiva() {
 document.getElementById('golomotiva').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const uid = user.uid;
-            console.log(uid)
-            console.log(user.email);
-            console.log(user);
-            console.log(usuario.votouBloco);
             if(usuario.votouBloco == false) {
                 goloMotiva();
             } else {
@@ -193,11 +194,6 @@ function thauane() {
 document.getElementById('thauane').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const uid = user.uid;
-            console.log(uid)
-            console.log(user.email);
-            console.log(user);
-            console.log(usuario.votouRainha);
             if(usuario.votouRainha == false) {
                 thauane();
             } else {
@@ -230,11 +226,6 @@ function kelly() {
 document.getElementById('kelly').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
         if (user) {
-            const uid = user.uid;
-            console.log(uid)
-            console.log(user.email);
-            console.log(user);
-            console.log(usuario.votouRainha);
             if(usuario.votouRainha == false) {
                 kelly();
             } else {
@@ -249,6 +240,7 @@ document.getElementById('kelly').addEventListener('click', function (e) {
 document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
+        location.reload();
     }).catch((error) => {
         console.log(error)
     });

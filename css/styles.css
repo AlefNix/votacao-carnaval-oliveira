@@ -64,46 +64,6 @@ main {
     text-align: center;
 }
 
-.opcoes-mobile {
-    display: none;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-.opcoes-mobile img {
-    width: 100%;
-}
-
-#botao-nav-rainha, #botao-nav-bloco {
-    display: none;
-}
-.slide-show {
-    overflow: hidden;
-}
-
-.slide-controller:nth-child(1):checked ~ .slide-show .slides-list {--selected-item: 0;}
-.slide-controller:nth-child(2):checked ~ .slide-show .slides-list {--selected-item: 1;}
-
-
-
-.slides-list {
-  --selected-item: 0;
-  --total-items: 2;
-  list-style-type: none;
-  margin: 10px 0;
-  padding: 0;
-  position: relative;
-  left: calc(var(--selected-item) * -100%);
-  width: calc(var(--total-items) * 100%);
-  transition: left 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-}
-
 .label-botao-nav {
     margin: 0px 5px;
     font-size: 20px;
@@ -124,18 +84,49 @@ main {
     border-radius: 5px;
 }
 
-[class^=arr-] {
-    border:       solid currentColor;
-    border-width: 0 .2em .2em 0;
-    display:      inline-block;
-    padding:      .20em;
-  }
-.arr-right {
-    transform:rotate(-45deg);
+.opcoes-voto {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.arr-left {
-    transform:rotate(135deg);
+.card{
+    width: 100%;
+    display: flex;
+    margin: 1% 1%;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.opcao-voto {
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 128/72;
+}
+
+#pelo-amor {
+    background-image: url('../assets/maxresdefault.jpg');
+}
+
+@media(max-width:1100px){
+    .opcoes-voto{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:720px){
+    .opcoes-voto{
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card {
+        width: 75%;
+    }
 }
 
 @media (max-width: 576px){
@@ -152,9 +143,10 @@ main {
         align-items: center;
     }
 
-    /* .opcoes-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
+}
+
+@media(max-width:425px){
+    .card {
+        width: 100%;
+    }
 }
