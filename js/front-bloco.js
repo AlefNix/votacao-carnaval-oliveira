@@ -28,6 +28,10 @@ document.getElementById('login').addEventListener('click', function (e) {
     login();
 })
 
+document.getElementById('botao-login').addEventListener('click', function (e) {
+    login();
+})
+
 function login() {
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -54,6 +58,7 @@ function login() {
                     usuario.votouBloco = false;
                     usuario.votouRainha = false;
                 }
+                location.reload()
             })()
         }).catch((error) => {
             const errorCode = error.code;
@@ -66,6 +71,7 @@ function login() {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
+        document.querySelector('.popup').remove();
         document.getElementById('imagem-perfil').src = user.providerData[0].photoURL;
         document.getElementById('login').style.display = "none";
         document.getElementById('imagem-perfil').style.display = "inline-block";
@@ -81,12 +87,9 @@ onAuthStateChanged(auth, (user) => {
             if(usuario.votouBloco === true) {
                 exibirVoto();
             }
-        })()
-        
-        console.log(usuario.votouBloco);
-
-        
+        })()     
     } else {
+        document.querySelector('.popup').style.display = 'flex';
         document.getElementById('imagem-perfil').style.display = "none";
         document.getElementById('login').style.display = "inline-block";
         document.querySelectorAll('.botao-votar').forEach((botao) => {
@@ -100,7 +103,7 @@ function exibirVoto() {
         const querySnapshot = await getDocs(collection(db, "votacao"));
         querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data().votos);
-        document.getElementById(doc.id).innerText = doc.data().votos;
+        document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
         });
     })()
     document.querySelectorAll('.botao-votar').forEach((botao) => {
@@ -600,6 +603,72 @@ document.getElementById('votar-voz-do-morro').addEventListener('click', function
         if (user) {
             if(usuario.votouBloco == false) {
                 blocoVoz();
+            } else {
+                alert(mensagemBloco)
+            }
+        } else {
+            alert('Você precisa fazer login primeiro!')
+        }
+    });
+})
+
+
+function gatinhas() {
+    (async function () {
+        const docRef = doc(db, "votacao", "gatinhas");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao", "gatinhas"), {
+                votos: media
+            });
+            votouBloco();
+            console.log("Document data:", media);
+            alert("Obrigado por votar no Bloco das Gatinhas!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-gatinhas').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            if(usuario.votouBloco == false) {
+                gatinhas();
+            } else {
+                alert(mensagemBloco)
+            }
+        } else {
+            alert('Você precisa fazer login primeiro!')
+        }
+    });
+})
+
+
+function mucangas() {
+    (async function () {
+        const docRef = doc(db, "votacao", "mucangas");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao", "mucangas"), {
+                votos: media
+            });
+            votouBloco();
+            console.log("Document data:", media);
+            alert("Obrigado por votar no Bloco das Muçangas!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-mucangas').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            if(usuario.votouBloco == false) {
+                mucangas();
             } else {
                 alert(mensagemBloco)
             }

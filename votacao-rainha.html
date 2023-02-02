@@ -7,10 +7,10 @@
     <title>Rainha</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="bodyrainha">
     <header>
         <nav class="nav-bar">
-            <a href="./index.html"><h1>Carnaval</h1></a>
+            <a href="./index.html"><img src="./assets/title.png" alt=""></a>
             <button id="login">
                 Login
             </button>
@@ -18,42 +18,50 @@
         </nav>
     </header>
     <main>
+        <section class="apoiadores">
+            <a href=""><img src="./assets/31.png" alt="chopao"></a>
+            <a href=""><img src="./assets/35.png" alt="map"></a>
+        </section>
         <section class="pergunta">
             <h1>Vote no seu Favorito</h1>
         </section>
         <section class="opcoes-voto">
            <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
+            <div class="opcao-voto pelo-amor"></div>
+            <h4 class="nome">Thaune Mendes</h4>
+            <span id="thauane-mendes"></span>
+            <button id="votar-thauane" class="botao-votar">Votar</button>
            </div>
            <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
+            <div class="opcao-voto pelo-amor"></div>
+            <h4 class="nome">Kelly Santos</h4>
+            <span id="kelly-santos"></span>
+            <button id="votar-kelly" class="botao-votar">Votar</button>
            </div>
            <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
-           </div>
-           <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
-           </div>
-           <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
-           </div>
-           <div class="card">
-            <div class="opcao-voto" id="pelo-amor"></div>
-            <h4 class="nome">Pelo Amor De Deus</h4>
-            <button>Votar</button>
+            <div class="opcao-voto pelo-amor"></div>
+            <h4 class="nome">Viviane</h4>
+            <span id="viviane"></span>
+            <button id="votar-viviane" class="botao-votar">Votar</button>
            </div>
         </section>
     </main>
+    <div class="popup">
+        <div class="card-login">
+            <header>
+                <a href="./index.html"><i class="arrow left"></i> <p class="voltar">Voltar</p></a>
+            </header>
+            <div class="texto-titulo">
+                <img src="./assets/title.png" alt="title">
+            </div>
+            <div class="texto-login">
+                <h2>Faça login para continuar!</h2>
+            </div>
+            <div class="botao-login">
+                <button id="botao-login"><img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_24dp.png" alt="google"><p class="login-google">LOGIN</p></button>
+            </div>
+        </div>
+    </div> 
     
 <script src="./js/front-rainha.js" type="module"></script>
 </body>

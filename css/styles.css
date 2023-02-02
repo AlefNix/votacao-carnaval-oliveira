@@ -1,8 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Josefin Sans';
+}
+
+.bodyhome {
+    height: 100vh;
+    background: linear-gradient(180deg, #ff6f1a, #b70700);
+    background-size: 300% 300%;
+
+    animation: AnimationName 6s ease infinite;
+}
+
+.bodybloco, .bodyrainha {
+    height: 100%;
+    background: linear-gradient(180deg, #ff6f1a, #b70700);
+    background-size: 300% 300%;
+
+    animation: AnimationName 6s ease-in-out infinite;
+}
+
+
+@keyframes AnimationName {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
 }
 
 .nav-bar {
@@ -10,16 +35,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-}
-
-main {
-    background-color: rgba(246, 48, 94, 0);
+    background-color: rgba(0, 0, 0, 0.063);
 }
 
 #login {
     padding: 5px 10px;
-    font-size: 1em;
     border-style: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #ff6f1a;
 }
 
 #imagem-perfil {
@@ -31,6 +56,7 @@ main {
     width: 100%;
     text-align: center;
     padding: 50px;
+    color: aliceblue;
 }
 
 .pergunta h1 {
@@ -78,10 +104,14 @@ main {
 }
 
 .span-inicial {
-    background-color: aquamarine;
-    padding: 5px 10px;
+    border-style: none;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: bolder;
     font-size: 20px;
-    border-radius: 5px;
+    margin-top: 5px;
+    color: aliceblue;
 }
 
 .opcoes-voto {
@@ -107,25 +137,177 @@ main {
     background-position: center;
     background-size: cover;
     aspect-ratio: 128/72;
+    border-radius: 10px;
 }
 
 .pelo-amor {
     background-image: url('../assets/maxresdefault.jpg');
 }
 
+.popup {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.365);
+    width: 100%;
+    height: 100%;
+}
+
+.card-login {
+    margin: 5%;
+    max-width: 400px;
+    max-height: 450px;
+    width: 100%;
+    height: 90%;
+    background-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+}
+
+.card-login header {
+    display: flex;
+}
+
+.card-login header a {
+    margin: 5%;
+}
+
+.card-login header a i, .card-login header a p{
+    display: inline-block;
+    font-size: 20px;
+    color: blueviolet;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.texto-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 37%;
+    background: linear-gradient(180deg, rgba(255,111,26,1) 0%, rgba(183,7,0,1) 100%);
+}
+
+.texto-titulo img {
+    height: 98%;
+}
+.arrow {
+    border: solid blueviolet;
+    border-width: 0 3px 3px 0;
+    padding: 4px;
+}
+
+.left {
+    transform: rotate(135deg);
+}
+
+.botao-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.botao-login button {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: aliceblue;
+    box-shadow:  21px 21px 77px #b0b0b0,
+                -21px -21px 77px #ffffff;
+}
+
+.botao-login button img {
+    padding-right: 15px;
+}
+
+.nome {
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.botao-votar {
+    border-style: none;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: bolder;
+    font-size: 20px;
+    margin-top: 5px;
+    color: aliceblue;
+}
+
+.botao-votar:disabled {
+    background-image: linear-gradient(92.88deg, #bfbfbf 9.16%, #cbcbcb 43.89%, #c7c7c7 64.72%);
+    color: rgb(255, 255, 255);
+}
+
+.num-votos {
+    font-size: 23px;
+    padding: 3px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.apoiadores{
+    max-width: 1400px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.apoiadores a img {
+    width: 30%;
+    border-radius: 20px;
+}
+
+.nav-bar a img {
+    width: 165px;
+}
 @media(max-width:1100px){
     .opcoes-voto{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .pergunta {
+        font-size: 90%;
+    }
 }
 
-@media(max-width:720px){
+@media(max-width:768px){
     .opcoes-voto{
         justify-items: center;
         grid-template-columns: repeat(1, 1fr);
     }
+
     .card {
-        width: 75%;
+        width: 90%;
+    }
+
+    .pergunta {
+        font-size: 80%;
+    }
+
+    .apoiadores a img {
+        width: 35%;
+        border-radius: 17px;
+    }
+
+    .opcoes a {
+        width: 30%;
     }
 }
 
@@ -138,15 +320,35 @@ main {
     
     .opcoes a {
         display: flex;
-        width: 75%;
+        width: 90%;
         flex-direction: column;
         align-items: center;
+    }
+
+    .pergunta {
+        font-size: 70%;
+    }
+
+    .apoiadores a img {
+        width: 40%;
+        border-radius: 15px;
     }
 
 }
 
 @media(max-width:425px){
+
+    .pergunta {
+        font-size: 65%;
+        padding: 20px 5px;
+    }
+
     .card {
-        width: 100%;
+        width: 95%;
+    }
+
+    .apoiadores a img {
+        width: 50%;
+        border-radius: 10px;
     }
 }

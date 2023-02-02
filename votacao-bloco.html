@@ -7,10 +7,10 @@
     <title>Bloco</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="bodybloco">
     <header>
         <nav class="nav-bar">
-            <a href="./index.html"><h1>Carnaval</h1></a>
+            <a href="./index.html"><img src="./assets/title.png" alt=""></a>
             <button id="login">
                 Login
             </button>
@@ -18,6 +18,12 @@
         </nav>
     </header>
     <main>
+        <section class="apoiadores">
+            <a href=""><img src="./assets/LOGOS CARNAVAL 20233.png" alt="chopao"></a>
+            <a href=""><img src="./assets/32.png" alt="minas-tech"></a>
+            <a href=""><img src="./assets/33.png" alt="julio-corretor"></a>
+            <a href=""><img src="./assets/34.png" alt="pneus-car"></a>
+        </section>
         <section class="pergunta">
             <h1>Vote no seu Favorito</h1>
         </section>
@@ -112,9 +118,36 @@
             <span id="voz-do-morro" class="num-votos"></span>
             <button id="votar-voz-do-morro" class="botao-votar">Votar</button>
            </div>
+           <div class="card">
+            <div class="opcao-voto pelo-amor"></div>
+            <h4 class="nome">Bloco das Gatinhas</h4>
+            <span id="gatinhas" class="num-votos"></span>
+            <button id="votar-gatinhas" class="botao-votar">Votar</button>
+           </div>
+           <div class="card">
+            <div class="opcao-voto pelo-amor"></div>
+            <h4 class="nome">Bloco das Muçangas</h4>
+            <span id="mucangas" class="num-votos"></span>
+            <button id="votar-mucangas" class="botao-votar">Votar</button>
+           </div>
         </section>
-    </main>
-    
+    </main> 
+    <div class="popup">
+        <div class="card-login">
+            <header>
+                <a href="./index.html"><i class="arrow left"></i> <p class="voltar">Voltar</p></a>
+            </header>
+            <div class="texto-titulo">
+                <img src="./assets/title.png" alt="title">
+            </div>
+            <div class="texto-login">
+                <h2>Faça login para continuar!</h2>
+            </div>
+            <div class="botao-login">
+                <button id="botao-login"><img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_24dp.png" alt="google"><p class="login-google">LOGIN</p></button>
+            </div>
+        </div>
+    </div> 
 <script src="./js/front-bloco.js" type="module"></script>
 </body>
 
