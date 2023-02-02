@@ -267,6 +267,7 @@
     width: 100%;
     margin-top: 20px;
     display: flex;
+    margin: 0 auto;
 }
 
 .apoiadores a img {
