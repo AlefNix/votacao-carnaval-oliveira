@@ -48,7 +48,7 @@
 }
 
 #imagem-perfil {
-    max-width: 48px;
+    max-width: 60px;
     border-radius: 50%;
 }
 
@@ -265,13 +265,17 @@
 .apoiadores{
     max-width: 1400px;
     width: 100%;
-    margin-top: 20px;
     display: flex;
-    margin: 0 auto;
+    margin: 2% auto;
+    justify-content: space-around;
+}
+
+.apoiadores a {
+    width: 15%;
 }
 
 .apoiadores a img {
-    width: 30%;
+    width: 100%;
     border-radius: 20px;
 }
 
@@ -303,13 +307,9 @@
     }
 
     .apoiadores a img {
-        width: 35%;
         border-radius: 17px;
     }
 
-    .opcoes a {
-        width: 30%;
-    }
 }
 
 @media (max-width: 576px){
@@ -331,7 +331,6 @@
     }
 
     .apoiadores a img {
-        width: 40%;
         border-radius: 15px;
     }
 
@@ -349,7 +348,6 @@
     }
 
     .apoiadores a img {
-        width: 50%;
         border-radius: 10px;
     }
 }
