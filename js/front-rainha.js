@@ -106,7 +106,7 @@ function exibirVoto() {
         const querySnapshot = await getDocs(collection(db, "votacao-rainha"));
         querySnapshot.forEach((doc) => {
         console.log(doc.id, " => ", doc.data().votos);
-        document.getElementById(doc.id).innerText = doc.data().votos;
+        document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
         });
     })()
     document.querySelectorAll('.botao-votar').forEach((botao) => {
