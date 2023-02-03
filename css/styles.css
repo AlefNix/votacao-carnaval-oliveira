@@ -38,6 +38,7 @@ body {
     border-radius: 5px;
     font-size: 20px;
     color: #ff6f1a;
+    cursor: pointer;
 }
 
 #imagem-perfil {
@@ -288,6 +289,7 @@ body {
     background-color: aliceblue;
     box-shadow:  21px 21px 77px #b0b0b0,
                 -21px -21px 77px #ffffff;
+    cursor: pointer;
 }
 
 .botao-login button img {
