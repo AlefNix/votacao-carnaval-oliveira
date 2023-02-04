@@ -15,6 +15,15 @@ body {
     animation: AnimationName 6s ease infinite;
 }
 
+.main-em-breve {
+    display: flex;
+    justify-content: center;
+    height: 77vh;
+    align-items: center;
+}
+.em-breve {
+    height: 100%;
+}
 
 @keyframes AnimationName {
     0%{background-position:50% 0%}
@@ -117,6 +126,7 @@ body {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
+    padding: 0 30px;
 }
 
 .card{
