@@ -32,7 +32,7 @@ function login() {
             const token = credential.accessToken;
             const user = result.user;
             console.log(user);
-            
+
             (async function () {
                 const docRef = doc(db, "users", user.displayName);
                 const docSnap = await getDoc(docRef);
@@ -83,14 +83,14 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-document.getElementById('logout').addEventListener('click', function (e) {
+/* document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
         location.reload();
     }).catch((error) => {
         console.log(error)
     });
-})
+}) */
 
 
 /* document.getElementById('confirm').addEventListener('click', (e) => {
