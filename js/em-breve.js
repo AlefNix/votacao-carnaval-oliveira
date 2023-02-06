@@ -80,7 +80,6 @@ onAuthStateChanged(auth, (user) => {
             }
         })()
     } else {
-        document.querySelector('.popup').style.display = 'flex';
         document.getElementById('imagem-perfil').style.display = "none";
         document.getElementById('login').style.display = "inline-block";
         document.querySelectorAll('.botao-votar').forEach((botao) => {
