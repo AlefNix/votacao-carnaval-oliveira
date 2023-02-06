@@ -32,13 +32,7 @@ function login() {
             const token = credential.accessToken;
             const user = result.user;
             console.log(user);
-
-            setDoc(doc(db, "users", user.displayName), {
-                nome: user.displayName,
-                email: user.email,
-                votouBloco: false,
-                votouRainha: false
-            })
+            
             (async function () {
                 const docRef = doc(db, "users", user.displayName);
                 const docSnap = await getDoc(docRef);
