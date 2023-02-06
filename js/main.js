@@ -29,6 +29,7 @@ function login() {
     signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
             const user = result.user;
             console.log(user);
 
@@ -88,7 +89,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-/* document.getElementById('logout').addEventListener('click', function (e) {
+document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
         location.reload();
@@ -96,7 +97,7 @@ onAuthStateChanged(auth, (user) => {
         console.log(error)
     });
 })
- */
+
 
 /* document.getElementById('confirm').addEventListener('click', (e) => {
     const response = confirm("Are you sure you want to do that?");
