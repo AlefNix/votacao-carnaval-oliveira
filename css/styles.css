@@ -326,6 +326,7 @@ body {
 .botao-votar:disabled {
     background-image: linear-gradient(92.88deg, #bfbfbf 9.16%, #cbcbcb 43.89%, #c7c7c7 64.72%);
     color: rgb(255, 255, 255);
+    cursor: default;
 }
 
 .num-votos {
