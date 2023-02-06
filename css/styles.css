@@ -228,6 +228,18 @@ body {
     background-image: url('../assets/kelly.jpg');
 }
 
+.thauane {
+    background-image: url('../assets/Thauane.jpeg');
+    background-position: 50% 20%;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-color: rgb(187, 187, 187);
+}
+
+.viviane {
+    background-image: url('../assets/');
+}
+
 .popup {
     position: fixed;
     display: none;
