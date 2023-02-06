@@ -320,6 +320,7 @@ body {
     font-size: 20px;
     margin-top: 5px;
     color: aliceblue;
+    cursor: pointer;
 }
 
 .botao-votar:disabled {
