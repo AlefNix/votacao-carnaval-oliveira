@@ -147,6 +147,14 @@ body {
     border-radius: 10px;
 }
 
+.opcao-voto-rainha {
+    width: 100%;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+}
 .pelo-amor {
     background-image: url('../assets/maxresdefault.jpg');
 }
@@ -215,6 +223,11 @@ body {
 .mucangas {
     background-image: url('../assets/mucangas.jpeg');
 }
+
+.kelly {
+    background-image: url('../assets/kelly.jpg');
+}
+
 .popup {
     position: fixed;
     display: none;
