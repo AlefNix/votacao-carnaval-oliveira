@@ -31,7 +31,6 @@ function login() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            console.log(user);
 
             (async function () {
                 const docRef = doc(db, "users", user.displayName);
@@ -40,7 +39,6 @@ function login() {
                 if (docSnap.exists()) {
                     usuario.votouBloco = docSnap.data().votouBloco;
                     usuario.votouRainha = docSnap.data().votouRainha;
-                    console.log("Document data:", docSnap.data());
                 } else {
                     setDoc(doc(db, "users", user.displayName), {
                         nome: user.displayName,
@@ -74,7 +72,6 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 usuario.votouBloco = docSnap.data().votouBloco;
                 usuario.votouRainha = docSnap.data().votouRainha;
-                console.log("Document data:", docSnap.data());
             }
         })()
     } else {

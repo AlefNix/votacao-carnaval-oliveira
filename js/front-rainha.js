@@ -49,7 +49,6 @@ function login() {
                 if (docSnap.exists()) {
                     usuario.votouBloco = docSnap.data().votouBloco;
                     usuario.votouRainha = docSnap.data().votouRainha;
-                    console.log("Document data:", docSnap.data());
                 } else {
                     setDoc(doc(db, "users", user.displayName), {
                         nome: user.displayName,
@@ -84,7 +83,6 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 usuario.votouBloco = docSnap.data().votouBloco;
                 usuario.votouRainha = docSnap.data().votouRainha;
-                console.log("Document data:", docSnap.data());
             }
             if (usuario.votouRainha === true) {
                 exibirVoto();
@@ -105,7 +103,6 @@ function exibirVoto() {
     (async function () {
         const querySnapshot = await getDocs(collection(db, "votacao-rainha"));
         querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data().votos);
             document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
         });
     })()
@@ -137,7 +134,6 @@ function thauane() {
                 votos: media
             });
             votouRainha();
-            console.log("Document data:", media);
             alert("Obrigado por votar no bloco candidata Thauane!")
         }
     })()
@@ -173,7 +169,6 @@ function kelly() {
                 votos: media
             });
             votouRainha();
-            console.log("Document data:", media);
             alert("Obrigado por votar na candidata Kelly!")
         }
     })()
@@ -209,7 +204,6 @@ function viviane() {
                 votos: media
             });
             votouRainha();
-            console.log("Document data:", media);
             alert("Obrigado por votar na candidata Viviane!")
         }
     })()

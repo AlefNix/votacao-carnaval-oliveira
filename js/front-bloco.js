@@ -47,7 +47,6 @@ function login() {
                 if (docSnap.exists()) {
                     usuario.votouBloco = docSnap.data().votouBloco;
                     usuario.votouRainha = docSnap.data().votouRainha;
-                    console.log("Document data:", docSnap.data());
                 } else {
                     setDoc(doc(db, "users", user.displayName), {
                         nome: user.displayName,
@@ -82,7 +81,6 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 usuario.votouBloco = docSnap.data().votouBloco;
                 usuario.votouRainha = docSnap.data().votouRainha;
-                console.log("Document data:", docSnap.data());
             }
             if(usuario.votouBloco === true) {
                 exibirVoto();
@@ -102,7 +100,6 @@ function exibirVoto() {
     (async function() {
         const querySnapshot = await getDocs(collection(db, "votacao"));
         querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data().votos);
         document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
         });
     })()
@@ -134,7 +131,6 @@ function peloAmorDeDeus() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no bloco Pelo Amor de Deus!")
         }
     })()
@@ -173,7 +169,6 @@ function goloMotiva() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no bloco Golomotiva!")
         }
     })()
@@ -212,7 +207,6 @@ function batuqueZe() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Batuque do Zé!")
         }
     })()
@@ -249,7 +243,6 @@ function bloco10() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco 10!")
         }
     })()
@@ -287,7 +280,6 @@ function blocoArvore() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco da Árvore!")
         }
     })()
@@ -326,7 +318,6 @@ function blocoDesire() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco da Desiree!")
         }
     })()
@@ -365,7 +356,6 @@ function blocoCapitao() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco do Capitão!")
         }
     })()
@@ -403,7 +393,6 @@ function blocoboi() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco do Boi da Alegria!")
         }
     })()
@@ -441,7 +430,6 @@ function blococainagua() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco dos Cai-N'água!")
         }
     })()
@@ -480,7 +468,6 @@ function blocoDiamantuque() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco Diamantuque!")
         }
     })()
@@ -519,7 +506,6 @@ function blocojiculinzila() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco Jiculinzila!")
         }
     })()
@@ -557,7 +543,6 @@ function blocoLoucos() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco Loucos Varridos!")
         }
     })()
@@ -595,7 +580,6 @@ function blocoPraia() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco Praia 15!")
         }
     })()
@@ -633,7 +617,6 @@ function blocofaia() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco Só Faia!")
         }
     })()
@@ -671,7 +654,6 @@ function blocoVoz() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Voz do Morro!")
         }
     })()
@@ -709,7 +691,6 @@ function gatinhas() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco das Gatinhas!")
         }
     })()
@@ -747,7 +728,6 @@ function mucangas() {
                 votos: media
             });
             votouBloco();
-            console.log("Document data:", media);
             alert("Obrigado por votar no Bloco das Muçangas!")
         }
     })()

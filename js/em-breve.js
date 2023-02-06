@@ -42,7 +42,6 @@ function login() {
                 if (docSnap.exists()) {
                     usuario.votouBloco = docSnap.data().votouBloco;
                     usuario.votouRainha = docSnap.data().votouRainha;
-                    console.log("Document data:", docSnap.data());
                 } else {
                     setDoc(doc(db, "users", user.displayName), {
                         nome: user.displayName,
@@ -76,7 +75,6 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 usuario.votouBloco = docSnap.data().votouBloco;
                 usuario.votouRainha = docSnap.data().votouRainha;
-                console.log("Document data:", docSnap.data());
             }
         })()
     } else {
