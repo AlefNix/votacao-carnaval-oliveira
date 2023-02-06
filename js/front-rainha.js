@@ -40,7 +40,7 @@ function login() {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
             const user = result.user;
-            
+
 
             (async function () {
                 const docRef = doc(db, "users", user.displayName);
@@ -86,7 +86,7 @@ onAuthStateChanged(auth, (user) => {
                 usuario.votouRainha = docSnap.data().votouRainha;
                 console.log("Document data:", docSnap.data());
             }
-            if(usuario.votouRainha === true) {
+            if (usuario.votouRainha === true) {
                 exibirVoto();
             }
         })()
@@ -102,11 +102,11 @@ onAuthStateChanged(auth, (user) => {
 
 
 function exibirVoto() {
-    (async function() {
+    (async function () {
         const querySnapshot = await getDocs(collection(db, "votacao-rainha"));
         querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data().votos);
-        document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
+            console.log(doc.id, " => ", doc.data().votos);
+            document.getElementById(doc.id).innerText = doc.data().votos + ' votos';
         });
     })()
     document.querySelectorAll('.botao-votar').forEach((botao) => {
@@ -146,14 +146,18 @@ function thauane() {
 
 document.getElementById('votar-thauane').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouRainha == false) {
-                thauane();
+        const response = confirm("Confirmar voto para Thauane Mendes?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    thauane();
+                } else {
+                    alert(mensagemRainha)
+                }
             } else {
-                alert(mensagemRainha)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -178,14 +182,18 @@ function kelly() {
 
 document.getElementById('votar-kelly').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouRainha == false) {
-                kelly();
+        const response = confirm("Confirmar voto para a Kelly Santos?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    kelly();
+                } else {
+                    alert(mensagemRainha)
+                }
             } else {
-                alert(mensagemRainha)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -210,14 +218,18 @@ function viviane() {
 
 document.getElementById('votar-viviane').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouRainha == false) {
-                viviane();
+        const response = confirm("Confirmar voto para a Viviane?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    viviane();
+                } else {
+                    alert(mensagemRainha)
+                }
             } else {
-                alert(mensagemRainha)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })

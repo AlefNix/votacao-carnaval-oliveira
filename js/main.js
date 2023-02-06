@@ -21,10 +21,6 @@ let usuario = {
     votouRainha: Boolean
 }
 
-let mensagemBloco = "Você ja votou em um bloco!";
-
-let mensagemRainha = "Você ja votou em uma candidata!"
-
 document.getElementById('login').addEventListener('click', function (e) {
     login();
 })
@@ -33,7 +29,6 @@ function login() {
     signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
             const user = result.user;
             console.log(user);
 
@@ -93,17 +88,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-
-function votouRainha() {
-    onAuthStateChanged(auth, async (user) => {
-        await updateDoc(doc(db, "users", user.displayName), {
-            votouRainha: true
-        });
-    });
-    usuario.votouRainha = true;
-}
-
-document.getElementById('logout').addEventListener('click', function (e) {
+/* document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
         location.reload();
@@ -111,7 +96,7 @@ document.getElementById('logout').addEventListener('click', function (e) {
         console.log(error)
     });
 })
-
+ */
 
 /* document.getElementById('confirm').addEventListener('click', (e) => {
     const response = confirm("Are you sure you want to do that?");

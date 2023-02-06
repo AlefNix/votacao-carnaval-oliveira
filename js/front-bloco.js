@@ -143,7 +143,11 @@ function peloAmorDeDeus() {
 
 document.getElementById('votar-pelo-amor-de-deus').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
+
+        const response = confirm("Confirmar voto no Pelo Amor de Deus?");
+
+        if (response) {
+           if (user) {
             if(usuario.votouBloco == false) {
                 peloAmorDeDeus();
             } else {
@@ -151,7 +155,10 @@ document.getElementById('votar-pelo-amor-de-deus').addEventListener('click', fun
             }
         } else {
             alert('Você precisa fazer login primeiro!')
+        } 
         }
+
+        
     });
 })
 
@@ -175,15 +182,21 @@ function goloMotiva() {
 
 document.getElementById('votar-golomotiva').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                goloMotiva();
+
+        const response = confirm("Confirmar voto no Golomotiva?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    goloMotiva();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
+
     });
 })
 
@@ -208,14 +221,19 @@ function batuqueZe() {
 
 document.getElementById('votar-batuque-do-ze').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                batuqueZe();
+
+        const response = confirm("Confirmar voto no Batuque do Zé?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    batuqueZe();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
-            }
-        } else {
-            alert('Você precisa fazer login primeiro!')
+                alert('Você precisa fazer login primeiro!')
+            } 
         }
     });
 })
@@ -240,15 +258,21 @@ function bloco10() {
 
 document.getElementById('votar-bloco-10').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                bloco10();
+
+        const response = confirm("Confirmar voto no Bloco 10?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    bloco10();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
-            }
-        } else {
-            alert('Você precisa fazer login primeiro!')
+                alert('Você precisa fazer login primeiro!')
+            }  
         }
+
     });
 })
 
@@ -272,15 +296,21 @@ function blocoArvore() {
 
 document.getElementById('votar-bloco-da-arvore').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoArvore();
+
+        const response = confirm("Confirmar voto no Bloco da Árvore?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoArvore();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
+
     });
 })
 
@@ -305,15 +335,21 @@ function blocoDesire() {
 
 document.getElementById('votar-bloco-da-desiree').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoDesire();
+
+        const response = confirm("Confirmar voto no Bloco da Desiree");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoDesire();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
-            }
-        } else {
-            alert('Você precisa fazer login primeiro!')
+                alert('Você precisa fazer login primeiro!')
+            } 
         }
+        
     });
 })
 
@@ -338,15 +374,21 @@ function blocoCapitao() {
 
 document.getElementById('votar-bloco-do-capitao').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoCapitao();
+
+        const response = confirm("Confirmar voto no Bloco do Capitão?");
+
+        if (response) {
+           if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoCapitao();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
+        
     });
 })
 
@@ -370,14 +412,20 @@ function blocoboi() {
 
 document.getElementById('votar-boi-da-alegria').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoboi();
+
+        const response = confirm("Confirmar voto no Bloco Boi da Alegria?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoboi();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+            
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
+           alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -402,15 +450,21 @@ function blococainagua() {
 
 document.getElementById('votar-cai-nagua').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blococainagua();
+
+        const response = confirm("Confirmar voto no Bloco dos Cai-N'água?");
+
+        if (response) {
+           if (user) {
+                if(usuario.votouBloco == false) {
+                    blococainagua();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
+        
     });
 })
 
@@ -435,15 +489,21 @@ function blocoDiamantuque() {
 
 document.getElementById('votar-diamantuque').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoDiamantuque();
+
+        const response = confirm("Confirmar voto no Bloco Diamantuque?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoDiamantuque();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
+        
     });
 })
 
@@ -468,14 +528,19 @@ function blocojiculinzila() {
 
 document.getElementById('votar-jiculinzila').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocojiculinzila();
+
+        const response = confirm("Confirmar voto no Bloco Jikula N'zila?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocojiculinzila();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -501,14 +566,19 @@ function blocoLoucos() {
 
 document.getElementById('votar-loucos-varridos').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoLoucos();
+
+        const response = confirm("Confirmar voto no Bloco Loucos Varridos?");
+
+        if (response) {
+           if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoLoucos();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -534,14 +604,19 @@ function blocoPraia() {
 
 document.getElementById('votar-praia-15').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoPraia();
+
+        const response = confirm("Confirmar voto no Bloco Praia 15?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoPraia();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -567,14 +642,19 @@ function blocofaia() {
 
 document.getElementById('votar-so-faia').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocofaia();
+
+        const response = confirm("Confirmar voto no bloco Só Faia?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocofaia();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -600,14 +680,19 @@ function blocoVoz() {
 
 document.getElementById('votar-voz-do-morro').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                blocoVoz();
+
+        const response = confirm("Confirmar voto no Unidos da Voz do Morro?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    blocoVoz();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
@@ -633,14 +718,19 @@ function gatinhas() {
 
 document.getElementById('votar-gatinhas').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                gatinhas();
+
+        const response = confirm("Confirmar voto no bloco das Gatinhas?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    gatinhas();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
-            }
-        } else {
-            alert('Você precisa fazer login primeiro!')
+                alert('Você precisa fazer login primeiro!')
+            } 
         }
     });
 })
@@ -666,14 +756,19 @@ function mucangas() {
 
 document.getElementById('votar-mucangas').addEventListener('click', function (e) {
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if(usuario.votouBloco == false) {
-                mucangas();
+
+        const response = confirm("Confirmar voto no bloco das Muçangas?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    mucangas();
+                } else {
+                    alert(mensagemBloco)
+                }
             } else {
-                alert(mensagemBloco)
+                alert('Você precisa fazer login primeiro!')
             }
-        } else {
-            alert('Você precisa fazer login primeiro!')
         }
     });
 })
