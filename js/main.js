@@ -88,16 +88,3 @@ onAuthStateChanged(auth, (user) => {
         console.log(error)
     });
 }) */
-
-
-/* document.getElementById('confirm').addEventListener('click', (e) => {
-    const response = confirm("Are you sure you want to do that?");
-
-    if (response) {
-        alert("Ok was pressed");
-    } else {
-        alert("Cancel was pressed");
-    }
-}
-) */
-    
