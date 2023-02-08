@@ -227,3 +227,38 @@ document.getElementById('votar-viviane').addEventListener('click', function (e) 
         }
     });
 })
+
+function nathalieNeto() {
+    (async function () {
+        const docRef = doc(db, "votacao-rainha", "nathalie-neto");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao-rainha", "nathalie-neto"), {
+                votos: media
+            });
+            votouRainha();
+            alert("Obrigado por votar na candidata Nathalie Neto!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-nathalie-neto').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+        const response = confirm("Confirmar voto para a Nathalie Neto?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    nathalieNeto();
+                } else {
+                    alert(mensagemRainha)
+                }
+            } else {
+                alert('Você precisa fazer login primeiro!')
+            }
+        }
+    });
+})

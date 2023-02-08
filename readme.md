@@ -1,4 +1,4 @@
-## Projeto para M.A.P. Soluções Digitais -- Votação de Rainha e blocos de carnaval criado COM HTML, CSS, JAVASCRIPT e Firebase
+## Projeto para M.A.P. Soluções Digitais -- Votação de Rainha e blocos de carnaval criado com HTML, CSS, JAVASCRIPT e Firebase;
 
 ## Technologies
 Project is created with:
