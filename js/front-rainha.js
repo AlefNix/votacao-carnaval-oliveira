@@ -262,3 +262,38 @@ document.getElementById('votar-nathalie-neto').addEventListener('click', functio
         }
     });
 })
+
+function mariaLuisa() {
+    (async function () {
+        const docRef = doc(db, "votacao-rainha", "maria-luisa");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao-rainha", "maria-luisa"), {
+                votos: media
+            });
+            votouRainha();
+            alert("Obrigado por votar na candidata Maria Luísa!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-maria-luisa').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+        const response = confirm("Confirmar voto para a Maria Luísa?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    mariaLuisa();
+                } else {
+                    alert(mensagemRainha)
+                }
+            } else {
+                alert('Você precisa fazer login primeiro!')
+            }
+        }
+    });
+})

@@ -245,6 +245,13 @@ body {
     background-image: url('../assets/nathalie-neto.jpeg');
     background-position: 50% 20%;
 }
+
+.maria-luisa {
+    background-image: url('../assets/maria-luiza.jpeg');
+    background-position: 50% 20%;
+}
+
+
 .popup {
     position: fixed;
     display: none;
