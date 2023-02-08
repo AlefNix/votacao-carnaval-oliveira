@@ -80,11 +80,11 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-/* document.getElementById('logout').addEventListener('click', function (e) {
+document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
         location.reload();
     }).catch((error) => {
         console.log(error)
     });
-}) */
+})
