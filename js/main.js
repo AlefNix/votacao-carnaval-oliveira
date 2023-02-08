@@ -80,7 +80,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-document.getElementById('logout').addEventListener('click', function (e) {
+/* document.getElementById('logout').addEventListener('click', function (e) {
     signOut(auth).then(() => {
         console.log('saiu');
         location.reload();
@@ -88,3 +88,4 @@ document.getElementById('logout').addEventListener('click', function (e) {
         console.log(error)
     });
 })
+ */
