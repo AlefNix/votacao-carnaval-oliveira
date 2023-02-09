@@ -480,6 +480,10 @@ canvas#canvas {
         font-size: 70%;
     }
 
+    .apoiadores a {
+        width: 19%;
+    }
+
     .apoiadores a img {
         border-radius: 15px;
     }
