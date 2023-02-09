@@ -136,7 +136,7 @@ function thauane() {
                 votos: media
             });
             votouRainha();
-            alert("Obrigado por votar no bloco candidata Thauane!")
+            alert("Obrigado por votar na candidata Thauane!")
         }
     })()
 }
