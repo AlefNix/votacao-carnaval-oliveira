@@ -77,7 +77,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('imagem-perfil').style.display = "inline-block";
         document.querySelectorAll('.botao-votar').forEach((botao) => {
             botao.style.display = "block";
-        })
+        });
         (async function () {
             const docRef = doc(db, "users", user.displayName);
             const docSnap = await getDoc(docRef);
