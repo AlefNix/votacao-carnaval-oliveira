@@ -35,8 +35,7 @@ document.getElementById('botao-login').addEventListener('click', function (e) {
 
 
 function login() {
-    /* signInWithPopup(auth, provider) */
-    signInWithRedirect(auth, provider)
+    signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
             const token = credential.accessToken;
