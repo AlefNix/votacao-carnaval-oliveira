@@ -754,3 +754,40 @@ document.getElementById('votar-mucangas').addEventListener('click', function (e)
         }
     });
 })
+
+
+function recordar() {
+    (async function () {
+        const docRef = doc(db, "votacao", "recordar");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao", "recordar"), {
+                votos: media
+            });
+            votouBloco();
+            alert("Obrigado por votar no Bloco Recordar é Viver!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-mucangas').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+
+        const response = confirm("Confirmar voto no bloco Recordar é Viver?");
+
+        if (response) {
+            if (user) {
+                if(usuario.votouBloco == false) {
+                    recordar();
+                } else {
+                    alert(mensagemBloco)
+                }
+            } else {
+                alert('Você precisa fazer login primeiro!')
+            }
+        }
+    });
+})

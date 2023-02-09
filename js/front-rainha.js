@@ -195,41 +195,6 @@ document.getElementById('votar-kelly').addEventListener('click', function (e) {
     });
 })
 
-function viviane() {
-    (async function () {
-        const docRef = doc(db, "votacao-rainha", "viviane");
-        const docSnap = await getDoc(docRef);
-        let media = docSnap.data().votos * 1 + 1;
-
-        if (docSnap.exists()) {
-            updateDoc(doc(db, "votacao-rainha", "viviane"), {
-                votos: media
-            });
-            votouRainha();
-            alert("Obrigado por votar na candidata Viviane!")
-        }
-    })()
-}
-
-
-document.getElementById('votar-viviane').addEventListener('click', function (e) {
-    onAuthStateChanged(auth, (user) => {
-        const response = confirm("Confirmar voto para a Viviane?");
-
-        if (response) {
-            if (user) {
-                if (usuario.votouRainha == false) {
-                    viviane();
-                } else {
-                    alert(mensagemRainha)
-                }
-            } else {
-                alert('Você precisa fazer login primeiro!')
-            }
-        }
-    });
-})
-
 function nathalieNeto() {
     (async function () {
         const docRef = doc(db, "votacao-rainha", "nathalie-neto");
