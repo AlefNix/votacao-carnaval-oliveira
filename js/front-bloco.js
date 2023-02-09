@@ -57,7 +57,6 @@ function login() {
                     usuario.votouBloco = false;
                     usuario.votouRainha = false;
                 }
-                location.reload()
             })()
         }).catch((error) => {
             const errorCode = error.code;
@@ -74,6 +73,9 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('imagem-perfil').src = user.providerData[0].photoURL;
         document.getElementById('login').style.display = "none";
         document.getElementById('imagem-perfil').style.display = "inline-block";
+        document.querySelectorAll('.botao-votar').forEach((botao) => {
+            botao.style.display = "block";
+        })
         (async function () {
             const docRef = doc(db, "users", user.displayName);
             const docSnap = await getDoc(docRef);
