@@ -224,6 +224,10 @@ body {
     background-image: url('../assets/mucangas.jpeg');
 }
 
+.recordar {
+    background-image: url('../assets/recordar.jpeg');
+}
+
 .kelly {
     background-image: url('../assets/kelly.jpg');
     background-position: 20% 0;
@@ -235,10 +239,6 @@ body {
     background-size: 90%;
     background-repeat: no-repeat;
     background-color: rgb(187, 187, 187);
-}
-
-.viviane {
-    background-image: url('../assets/');
 }
 
 .nathalie-neto {
