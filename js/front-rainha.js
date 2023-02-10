@@ -273,3 +273,38 @@ document.getElementById('votar-maria-luisa').addEventListener('click', function 
         }
     });
 })
+
+function marinaNunes() {
+    (async function () {
+        const docRef = doc(db, "votacao-rainha", "marina-nunes");
+        const docSnap = await getDoc(docRef);
+        let media = docSnap.data().votos * 1 + 1;
+
+        if (docSnap.exists()) {
+            updateDoc(doc(db, "votacao-rainha", "marina-nunes"), {
+                votos: media
+            });
+            votouRainha();
+            alert("Obrigado por votar na candidata Marina Nunes Pinheiro!")
+        }
+    })()
+}
+
+
+document.getElementById('votar-marina-nunes').addEventListener('click', function (e) {
+    onAuthStateChanged(auth, (user) => {
+        const response = confirm("Confirmar voto para a Marina Nunes Pinheiro?");
+
+        if (response) {
+            if (user) {
+                if (usuario.votouRainha == false) {
+                    marinaNunes();
+                } else {
+                    alert(mensagemRainha)
+                }
+            } else {
+                alert('Você precisa fazer login primeiro!')
+            }
+        }
+    });
+})

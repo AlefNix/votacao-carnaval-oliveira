@@ -251,6 +251,9 @@ body {
     background-position: 50% 20%;
 }
 
+.marina-nunes {
+    background-image: url('../assets/marina.jpeg');
+}
 
 .popup {
     position: fixed;
