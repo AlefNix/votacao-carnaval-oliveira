@@ -83,6 +83,15 @@ onAuthStateChanged(auth, (user) => {
             if (docSnap.exists()) {
                 usuario.votouBloco = docSnap.data().votouBloco;
                 usuario.votouRainha = docSnap.data().votouRainha;
+            } else {
+                setDoc(doc(db, "users", user.displayName), {
+                    nome: user.displayName,
+                    email: user.email,
+                    votouBloco: false,
+                    votouRainha: false
+                });
+                usuario.votouBloco = false;
+                usuario.votouRainha = false;
             }
             if(usuario.votouBloco === true) {
                 exibirVoto();
