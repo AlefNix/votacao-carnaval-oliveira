@@ -278,7 +278,7 @@ function marinaNunes() {
     (async function () {
         const docRef = doc(db, "votacao-rainha", "marina-nunes");
         const docSnap = await getDoc(docRef);
-        let media = docSnap.data().votos * 1 + 1.6;
+        let media = docSnap.data().votos * 1 + 1.3;
 
         if (docSnap.exists()) {
             updateDoc(doc(db, "votacao-rainha", "marina-nunes"), {
